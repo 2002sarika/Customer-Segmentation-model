@@ -1,0 +1,29 @@
+{% extends 'page/base.html'%} 
+{% block title %}Results{% endblock %}
+
+{% block content %}
+ <div class="container">
+     <div class="row-mt-4">
+         <div class="row-md-8 offset-md-2">
+           <table class="table caption-top">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Annual Income</th>
+                <th scope="col">Spending_score</th>
+                <th scope="col">Results</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for data in score %}
+              <tr>
+                <th scope="row">{{data.Annual_Income}}</th>
+                <td>{{data.Spending_score}}</td>
+                <td>{{data.prediction}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+         </div>
+     </div>
+ </div>
+{% endblock %}

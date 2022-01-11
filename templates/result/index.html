@@ -1,0 +1,22 @@
+{% extends 'page/base.html'%} 
+{% block title %}Home{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+ <div class="container">
+     <div class="row-mt-4">
+         <div class="row-md-8 offset-md-2">
+            <div class="card text-white bg-primary mb-7"style="width:600px; position:relative; top:30px;">
+                <div class="card-body">
+                  <h5 class="card-title">Enter your details below:</h5><br>
+                    <form method="POST" stye="line-height:12px;">
+                      {% csrf_token %}
+                       {{ form |crispy }}
+                     <br><br>
+                    <input type="submit" class="btn btn-info" value="Make Prediction">
+                </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
